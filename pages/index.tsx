@@ -7,7 +7,9 @@ const font = Nunito({
 
 const Home: NextPage = () => {
   return (
-   <div className={font.className}>Hello Airbnb!</div>
+    <div className={font.className}>
+      <div className="text-rose-500 text-2xl">Hello Airbnb!</div>
+    </div>
   )
 }
 
