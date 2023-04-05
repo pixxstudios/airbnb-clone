@@ -1,21 +1,23 @@
+"use client";
 
-import React from 'react'
+import React from "react";
 
 interface ContainerProps {
-    children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function Container({ children }: ContainerProps) {
   return (
-    <div className='
+    <div
+      className="
         max-w-[2520px]
         mx-auto
         xl:px-20
         md:px-10
         sm:px-2
-        xs:px-4'
+        xs:px-4"
     >
-        {children}
+      {children}
     </div>
-  )
+  );
 }
