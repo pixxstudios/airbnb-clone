@@ -167,7 +167,7 @@ export const Modal = ({
                     w-full
                 "
                 >
-                  <Button label="Mu button" />
+                  <Button label="My button" />
                 </div>
               </div>
             </div>
