@@ -6,7 +6,7 @@ import { Modal } from "../components/modals/Modal";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Modal isOpen title="Hello" />
+      <Modal isOpen title="Hello" actionLabel="Submit" />
       <Navbar />
       <Component {...pageProps} />
     </>
