@@ -9,6 +9,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import { useRegisterModal } from "../../hooks/useRegisterModal";
+import { Modal } from "./Modal";
 
 export const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -26,5 +27,24 @@ export const RegisterModal = () => {
     },
   });
 
-  return <div></div>;
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setIsLoading(true);
+
+    axios
+      .post("/api/register", data)
+      .then(() => registerModal.onClose())
+      .catch((err) => console.error(err))
+      .finally(() => setIsLoading(false));
+  };
+
+  return (
+    <Modal
+      disabled={isLoading}
+      isOpen={registerModal.isOpen}
+      title="Register"
+      actionLabel="Continue"
+      onClose={registerModal.onClose}
+      onSubmit={handleSubmit(onSubmit)}
+    />
+  );
 };

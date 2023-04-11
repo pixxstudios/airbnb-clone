@@ -88,13 +88,14 @@ export const Modal = ({
             lg:h-auto
             md:h-auto"
         >
+          {/* context */}
           <div
             className={`
             translate
             duration-300
             h-full
-            ${showModal} ? 'translate-y-0' : 'translate-y-full'
-            ${showModal} ? 'opacity-100' : 'opacity-0'
+            ${showModal ? "translate-y-0" : "translate-y-full"}
+            ${showModal ? "opacity-100" : "opacity-0"}
             `}
           >
             <div
