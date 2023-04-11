@@ -10,6 +10,8 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import { useRegisterModal } from "../../hooks/useRegisterModal";
 import { Modal } from "./Modal";
+import { Heading } from "../Heading";
+import { Input } from "../inputs/Input";
 
 export const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -37,6 +39,13 @@ export const RegisterModal = () => {
       .finally(() => setIsLoading(false));
   };
 
+  const bodyContent = (
+    <div className="flex flex-col gap-4">
+      <Heading title="Welcome to Airbnb" subtitle="Create an account!" />
+      <Input />
+    </div>
+  );
+
   return (
     <Modal
       disabled={isLoading}
@@ -45,6 +54,7 @@ export const RegisterModal = () => {
       actionLabel="Continue"
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
+      body={bodyContent}
     />
   );
 };
